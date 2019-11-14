@@ -7,36 +7,64 @@
     <title>Document</title>
     <style>
         body {
-            display: flex;
             align-items: center;
-            justify-content: center;
+            display: flex;
             flex-direction: column;
         }
-        input {
+        body > * {
             font-size: 2em;
-            margin: 3%;
+            margin: 5% 0 0 0;
+        }
+        input {
+            font-size: 4em;
+            outline: none;
+            border: none;
+            text-align: center;
+            width: 18%;
         }
         button {
-
+            background: #FFF;
+            border: 4px solid #494949;
+            color: #494949;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.4s ease 0s;
+        }
+        button:hover {
+            background: #7d5c8d;
+            border-color: #7d5c8d;
+            color: #FFF;
+            transition: all 0.4s ease 0s;
+        }
+        label {
+            font-size: small;
+            margin: 0;
+            transform: translateX(30px);
         }
     </style>
 </head>
 <body>
 
-    <input type="number" autofocus>
+    <input type="number" value="0"  autofocus>
+    <label>Press Enter</label>
     <button>Cancelar</button>
     <p></p>
 
     <script>
 
+        const input = document.getElementsByTagName("input")[0]
         const boton = document.getElementsByTagName("button")[0]
         const p = document.getElementsByTagName("p")[0]
+        let total = 0
         
-        let getTexto = () => document.getElementsByTagName("input")[0].value
+        let getNum = () => input.value
 
-        //boton.addEventListener("click", () => alert("jee"))
+        document.onkeypress = e => e.keyCode === 13 ? (total+=parseInt(getNum()), input.value = "0") : console.log(total)
 
-        document.onkeypress = e => console.log(e.keyCode)      
+        boton.addEventListener("click", () => p.innerText = total)
 
     </script>
 </body>
