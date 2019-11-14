@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Artículos</title>
+    <link rel="icon" href="http://icons.iconarchive.com/icons/thalita-torres/office/32/color-catalog-icon.png">
+    <style>
+        body
+        {
+            align-items: center;
+            background-color: #EEE;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5vw; 
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container
+        {
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 0 8px 8px rgba(0,0,0,0.5);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            height: 70vw;
+            position: relative;
+            width: 80%;
+            max-height: 90vh;
+        }
+        .container::before
+        {
+            background-color: #D20000;
+            clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%);
+            color: white;
+            content: ' Artículos ';
+            padding: 5px;
+            position: absolute;
+            text-align: center;
+            transform: translate(-20%,-50%);
+            width: 15%;
+        }
+        .articulo
+        {
+            align-self: center;
+            cursor: pointer;
+            height: 75%;
+            justify-self: center;
+            width: 75%;
+        }
+        .articulo:nth-of-type(1)
+        {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .articulo:nth-of-type(2)
+        {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .articulo:nth-of-type(3)
+        {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        .articulo:nth-of-type(4)
+        {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .articulo:hover .enlace 
+        {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            background-color: #009;
+        }
+        .articulo div
+        {
+            height: 80%;
+        }
+        .articulo:nth-of-type(1) .fotoProducto
+        {
+            background: linear-gradient(to bottom, #090, transparent);
+        }
+        .articulo:nth-of-type(2) .fotoProducto
+        {
+            background: linear-gradient(to right, #009, #00000000);
+        }
+        .articulo:nth-of-type(3) .fotoProducto
+        {
+            background: linear-gradient(45deg, #909 0%,#909 40%,#990 60%,#990 100%);
+        }
+        .articulo:nth-of-type(4) .fotoProducto
+        {
+            background: radial-gradient(circle, #099, #00000000);
+        }
+        .enlace
+        {
+            align-items: center;
+            background-color: #D20000;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+            color: #FFF;
+            display: flex;
+            height: 20%;
+            text-decoration: none;
+            transition: .3s;
+        }
+        .enlace span
+        {
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="articulo">
+            <div class="fotoProducto"></div><a href="#" class="enlace"><span>Artículo 1</span></a>
+        </div>
+        <div class="articulo">
+            <div class="fotoProducto"></div><a href="#" class="enlace"><span>Artículo 2</span></a>
+        </div>
+        <div class="articulo">
+            <div class="fotoProducto"></div><a href="#" class="enlace"><span>Artículo 3</span></a>
+        </div>
+        <div class="articulo">
+            <div class="fotoProducto"></div><a href="#" class="enlace"><span>Artículo 4</span></a>
+        </div>
+    </div>
+</body>
+</html>
