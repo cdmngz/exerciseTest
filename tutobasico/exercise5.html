@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        body > * {
+            font-size: 2em;
+            margin: 5% 0 0 0;
+        }
+        input {
+            font-size: 4em;
+            text-align: center;
+        }
+        button {
+            background: #FFF;
+            border: 4px solid #37405c;
+            color: #37405c;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.4s ease 0s;
+        }
+        button:hover {
+            background: #37405c;
+            border-color: #37405c;
+            color: #FFF;
+            transition: all 0.4s ease 0s;
+        }
+        label {
+            font-size: small;
+            margin: 0;
+            transform: translateX(30px);
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" value=""  autofocus>
+    <button>Enviar</button>
+    <p></p>
+
+    <script>
+
+        const input = document.getElementsByTagName("input")[0]
+        const boton = document.getElementsByTagName("button")[0]
+        const p = document.getElementsByTagName("p")[0]
+
+        let letra = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"] 
+        
+        boton.addEventListener("click", () => p.innerText = letra[input.value%23])
+
+    </script>
+</body>
+</html>
