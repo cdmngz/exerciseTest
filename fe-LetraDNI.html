@@ -45,7 +45,7 @@
 </head>
 <body>
 
-    <input type="number" value=""  autofocus>
+    <input type="number" value="" autofocus>
     <button>Enviar</button>
     <p></p>
 
@@ -55,7 +55,7 @@
         const boton = document.getElementsByTagName("button")[0]
         const p = document.getElementsByTagName("p")[0]
 
-        let letra = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"] 
+        const letra = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"] 
         
         boton.addEventListener("click", () => p.innerText = letra[input.value%23])
 
